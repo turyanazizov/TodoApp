@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Site</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="margin-bottom: 50px;">Welcome my Todo Website</h1>
+
+        <form action="/add" method="post">
+            <div class="todoBody">
+                <label class="title" for="title">Todo Title</label>
+                <input class="title-content margin-10px" type="text" name="title" placeholder="Enter new Todo...">
+                <button style="cursor: pointer;" class="add-button button-49" type="submit">Add</button>
+            </div>
+        </form>
+
+        {% for todo in todo_list%}
+        <div class="listItem">
+            <div class="list-content">
+                <p class="margin-10px"> {{todo.id}} | {{todo.title}} </p>
+                {% if todo.complete==False %}
+                <span class="margin-10px not-complete">Not Completed</span>
+                {% else %}
+                <span class="margin-10px complete">Completed</span>
+                {%endif%}
+            </div>
+            <div class="list-changers">
+                <a class="margin-10px" href="/update/{{todo.id}}">
+                    <button class="button-82-pushable" role="button">
+                        <span class="button-82-shadow"></span>
+                        <span class="button-82-edge"></span>
+                        <span class="button-82-front text">
+                            Update
+                        </span>
+                    </button>
+                </a>
+                <a class="margin-10px" href="/delete/{{todo.id}}">
+                    <button class="button-82-pushable" role="button">
+                        <span class="button-82-shadow"></span>
+                        <span class="button-82-edge"></span>
+                        <span class="button-82-front text">
+                            Delete
+                        </span>
+                    </button>
+                </a>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+    <div class="message">
+        Do <br> Your <br> Work <br>Don't <br> be <br> Stupid
+    </div>
+</body>
+
+</html>
