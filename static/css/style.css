@@ -33,7 +33,7 @@ footer{
     flex-direction: column;
 }
 .add-button{
-  margin-left: 87% ;
+  margin-left: 87.5% ;
 }
 .listItem{
     display: flex;
@@ -136,7 +136,7 @@ footer{
 
 .message h1 {
   background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
-  background-size: cover;
+  background-size: auto;
   color: transparent;
   -moz-background-clip: text;
   -webkit-background-clip: text;
