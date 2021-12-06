@@ -7,6 +7,11 @@ body{
     display: flex;
     justify-content: space-around;
 }
+footer{
+  position: absolute;
+  left: 65px;
+  top:  70px;
+}
 .title{
     font-size: 1.5em;
 }
@@ -28,11 +33,15 @@ body{
     flex-direction: column;
 }
 .add-button{
-  margin-left: 788px;
+  margin-left: 87% ;
 }
 .listItem{
     display: flex;
     flex-direction: column;
+}
+.list-changers{
+  display: flex;
+  justify-content: end;
 }
 .margin-10px{
     margin:10px 5px;
@@ -54,7 +63,7 @@ body{
     justify-content: center;
     padding: 8px 8px;
     border-radius: 5px;
-    background-color: red;
+    background-color: #F22613;
 }
 .complete{
     display: flex;
@@ -62,42 +71,107 @@ body{
     justify-content: center;
     padding: 8px 8px; 
     border-radius: 5px;
-    background-color: green;
+    background-color: #26A65B;
 }
-/* css */
-.message{
-    text-align: center;
-  font-size: 6.5em;
-  color: #fff;
-  letter-spacing: -7px;
-  font-weight: 700;
-  text-transform: uppercase;
-  animation: blur 1s ease-out infinite;
-  text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
-}
-@keyframes blur {
-  from {
-    text-shadow:0px 0px 10px #fff,
-      0px 0px 10px #fff, 
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 50px #fff,
-      0px 0px 50px #fff,
-      0px 0px 50px #7B96B8,
-      0px 0px 150px #7B96B8,
-      0px 10px 100px #7B96B8,
-      0px 10px 100px #7B96B8,
-      0px 10px 100px #7B96B8,
-      0px 10px 100px #7B96B8,
-      0px -10px 100px #7B96B8,
-      0px -10px 100px #7B96B8;
+/* CSS owner text Style */
+@keyframes tipsy {
+  0 {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
   }
 }
-/* CSS */
+.me {
+  font-family: 'Fira Mono', monospace;
+  color: #fffbf1;
+  text-shadow: 0 20px 25px #2e2e31, 0 40px 60px #2e2e31;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: -1px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.me:before,
+.me:after {
+  content: '';
+  padding: .9em .4em;
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  top: 50%;
+  display: block;
+  border: 15px solid red;
+  transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  animation: 10s infinite alternate ease-in-out tipsy;
+}
+
+.me:before {
+  border-color: #d9524a #d9524a rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  z-index: -1;
+}
+
+.me:after {
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #d9524a #d9524a;
+  box-shadow: 25px 25px 25px rgba(46, 46, 49, .8);
+}
+
+/* CSS Text Style */
+.message {
+  font-family: "Montserrat";
+  text-align: center;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  height: 100vh;
+  letter-spacing: 5px;
+}
+
+.message h1 {
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 110px;
+  line-height: 1;
+  /* margin: 10px 0; */
+}
+/* Welcome Text Styles */
+.welcome {
+  margin-top: 50px;
+  position: relative;
+  font-family: 'Fira Mono', monospace;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 3s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
+
+/* CSS Button Styles */
+
 .button-49,
 .button-49:after {
   width: 100px;
@@ -198,8 +272,6 @@ body{
   }
 }
 
-
-/* CSS */
 .button-82-pushable {
   position: relative;
   border: none;
