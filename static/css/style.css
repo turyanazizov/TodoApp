@@ -24,9 +24,10 @@ footer{
 }
 .title-content{
     height: 40px;
-    background-color: #f2f3f4;
-    color: black;
     font-family: 'Fira Mono', monospace;
+    background: #191A19;
+    color: #F6F6F6;
+    opacity: 0.9;
 }
 .todoBody{
     display: flex;
@@ -50,13 +51,15 @@ footer{
     height: 40px;
     background-color: #f2f3f4;
     border-radius: 10px ;
-    color: black;
     display: flex;
     justify-content:space-between;
     align-items: center;
     margin: 10px 0px;
     overflow: hidden;
-}
+    color: #191A19;
+    opacity: 0.7;
+    font-weight: bold;
+  }
 .not-complete{
     display: flex;
     align-items: center;
